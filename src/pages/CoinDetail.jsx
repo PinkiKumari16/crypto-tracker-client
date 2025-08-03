@@ -15,7 +15,7 @@ export const CoinDetail = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/history/${coinId}`);
+        const res = await axios.get(`https://crypto-tracker-server-qjd0.onrender.com/api/history/${coinId}`);
         const formatted = res.data.map((item) => ({
           ...item,
           date: new Date(item.timestamp).toLocaleDateString(),

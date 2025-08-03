@@ -11,7 +11,7 @@ export const Dashboard = () => {
 
   const getLiveData = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/coins");
+      const res = await axios.get("https://crypto-tracker-server-qjd0.onrender.com/api/coins");
       // console.log(res.data);
       setCoins(res.data);
       setLastUpdated(new Date().toLocaleTimeString());
@@ -21,10 +21,9 @@ export const Dashboard = () => {
   };
 
   const addHistory = async () => {
-    // console.log("api hitting");
     try {
-      const res = await axios.post("http://localhost:5000/api/history");
-      // console.log(res.data);
+      const res = await axios.post("https://crypto-tracker-server-qjd0.onrender.com/api/history");
+      console.log(res.data);
       alert(res.data.message);
     } catch (err) {
       console.error("Cron error:", err.message);
